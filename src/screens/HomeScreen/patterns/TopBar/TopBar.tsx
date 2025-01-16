@@ -96,7 +96,7 @@ export default function TopBar() {
             display: { xs: "none", lg: "flex" }
           }}
         >
-          <Button variant="outlined" colorVariant="purple" textVariant="bodyStrong">
+          <Button variant="outlined" colorVariant="lightGray" textVariant="bodyStrong">
             Entrar em Contato
           </Button>
         </Box>

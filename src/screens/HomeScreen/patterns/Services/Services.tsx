@@ -47,6 +47,7 @@ export default function Services(){
             crescer de forma sustentável.
           </Text>
           <Button variant="outlined" 
+            colorVariant="lightGray"
             styleSheet={{
               marginTop: "30px"
             }}>

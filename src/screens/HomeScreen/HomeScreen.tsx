@@ -32,15 +32,27 @@ export default function HomeScreen() {
         }}>
             <KnokOut></KnokOut>
             <Services></Services>
+        </Box>
+        <Box styleSheet={{
+          alignItems: {xl: "center"},
+          backgroundColor: theme.colors.knokout.lightGray,
+        }}>
             <Portfolio>
               <Portfolio.Intro />
               <Portfolio.Projects />
             </Portfolio>
+        </Box>
+        <Box styleSheet={{
+          padding: {xs:'0 36px', xl:'0 102px'},
+          alignItems: {xl: "center"},
+        }}>
             <HistoryResult></HistoryResult>
             <ExcellencePath></ExcellencePath>
         </Box>
-        <Contact></Contact>
-        <Footer></Footer>
+        <Box>
+            <Contact></Contact>
+            <Footer></Footer>
+        </Box>
       </Box>
   )
 }

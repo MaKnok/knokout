@@ -18,13 +18,17 @@ export default function Button({
   fullwidth = false,
   colorVariant = 'linear02',
   variant = 'contained',
-  size = 'md'
+  size = 'md',
+  onClick,
+  ...props
 }: ButtonProps){
 
   const theme  = useTheme();
   
   return(
     <ButtonBase
+      onClick = {onClick}
+      {...props}
       styleSheet={{
         alignSelf: "flex-start",
         //[Color + Variant]

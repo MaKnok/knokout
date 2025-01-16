@@ -34,7 +34,7 @@ function createVariant(theme: Theme, colorVariant) {
     outlined: {
       border: '2px solid',
       backgroundColor: 'transparent',
-      color: theme.colors.knokout.lightGray,
+      color: theme.colors.knokout[colorVariant],
       borderColor: theme.colors.knokout[colorVariant],
       transition: 'transform 0.5s',
       hover: {
