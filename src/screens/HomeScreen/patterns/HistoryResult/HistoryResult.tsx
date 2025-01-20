@@ -15,6 +15,7 @@ export default function HistoryResult(){
     <Box styleSheet={{
       padding: {xs:"48px 0", lg: "72px 0"},
       textAlign: "center",
+      alignItems: "center"
     }}>
 
       <Text variant="titlePage">
@@ -22,17 +23,20 @@ export default function HistoryResult(){
       </Text>
 
       <Box styleSheet={{
-        marginTop: { xs: "30px", lg: "50px", xl: "60px"},
         display: "flex",
-        flexDirection: { xs: "column", md: "row"},
-        height: { xs: "340px", lg: "156px", xl: "186px"},
-        justifyContent: { xs: "space-between", lg: "center"}
+        flexDirection: { xs: "column", md: "row" },
+        height: { xs:"340px", md:"auto" },
+        width: { md:"580px", lg:"640px" },
+        justifyContent: "space-between",
+        marginTop: { xs: "30px", lg: "50px", xl: "60px" },
       }}>
 
-        {historyResultsItems.map((item) => (
-            <Box styleSheet={{
-              width: { lg: "300px" },
-              alignItems: "center"
+        {historyResultsItems.map((item,i) => (
+            <Box 
+            key = {i}
+            styleSheet={{
+              width: { md: "260px", lg: "300px" },
+              alignItems: "center",
             }}>
                 <HistoryResultsIcon name={item.icon}></HistoryResultsIcon>
                 <Text styleSheet={{

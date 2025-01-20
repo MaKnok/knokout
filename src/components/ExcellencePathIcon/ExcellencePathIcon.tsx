@@ -11,7 +11,7 @@ const iconSizes = {
 } as const;
 
 interface ExcellencePathIconProps {
-  name: keyof typeof icons;
+  name: keyof typeof icons | string;
   styleSheet?: StyleSheet;
   size?: keyof typeof iconSizes;
 }
