@@ -49,7 +49,12 @@ export default function HomeScreen() {
             <HistoryResult></HistoryResult>
             <ExcellencePath></ExcellencePath>
         </Box>
-        <Box>
+        <Box styleSheet={{
+          display: "flex",
+          flexDirection: {xs:"column", md: "row"},
+          justifyContent: "space-between",
+          marginBottom: {md: "48px"}
+        }}>
             <Contact></Contact>
             <Footer></Footer>
         </Box>
