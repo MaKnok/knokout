@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   // [NextJS Reset]
@@ -29,6 +29,22 @@ const GlobalStyle = createGlobalStyle`
     align-content: flex-start;
     flex-shrink: 0;
   }
+  .react-tel-input .country-list .country-name {
+    color: #1A1A1A;
+  }
+  .react-tel-input .flag-dropdown {
+    background-color: #000045;
+    border-right: none;
+  }
+  .react-tel-input .selected-flag .arrow {
+    border-top: 4px solid  #C1C0C0;
+  }
+  input::placeholder {
+    color: lightgray; /* Change this to your desired color */
+    opacity: 1; /* Ensures visibility */
+    font-size: 12pt;
+    fontFamily: "Maven Pro";
+  }
   // ============
   // [Dark Mode Styles]
   /* body.dark {
@@ -43,6 +59,5 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 `;
-
 
 export default GlobalStyle;

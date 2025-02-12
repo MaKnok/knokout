@@ -3,24 +3,20 @@ import { StyleSheet } from "@src/theme/StyleSheet";
 import * as icons from "./svgs/_index";
 
 const iconSizes = {
-  xs: '18px',
-  sm: '18px',
-  md: '18px',
-  lg: '24px', 
-  xl: '24px'
+  xs: "18px",
+  sm: "18px",
+  md: "18px",
+  lg: "24px",
+  xl: "24px",
 } as const;
 
 interface IconProps {
-  name: keyof typeof icons;
+  name: keyof typeof icons | string;
   styleSheet?: StyleSheet;
   size?: keyof typeof iconSizes;
 }
 
-export default function Icon({ 
-  name,
-  size,
-  ...props
-}: IconProps) {
+export default function Icon({ name, size, ...props }: IconProps) {
   const IconComponent = icons[name];
 
   if (!IconComponent) {
@@ -34,12 +30,12 @@ export default function Icon({
       styleSheet={{
         width: iconSizes,
         height: iconSizes,
-        transition: 'transform 0.5s',
+        transition: "transform 0.5s",
         hover: {
           cursor: "pointer",
-          WebkitTransform: 'translateY(-3px)',
-          transform: 'translateY(-3px)', 
-        }
+          WebkitTransform: "translateY(-3px)",
+          transform: "translateY(-3px)",
+        },
       }}
       color="#FFF"
       viewBox="0 0 24 24"
@@ -52,4 +48,3 @@ export default function Icon({
     </BaseComponent>
   );
 }
-

@@ -1,20 +1,20 @@
 import { ThemeTypographyVariants } from "@src/theme/theme";
 import styled from "styled-components";
 import Text from "../Text/Text";
-import { useRipple } from 'react-use-ripple'
+import { useRipple } from "react-use-ripple";
 import { useRouter } from "next/router";
 import React from "react";
 import { StyleSheet } from "@src/theme/StyleSheet";
 
-const StyledButton = styled(Text)<{ textVariant?: ThemeTypographyVariants; }>`
-  ${({ textVariant, theme}) => {
+const StyledButton = styled(Text)<{ textVariant?: ThemeTypographyVariants }>`
+  ${({ textVariant, theme }) => {
     const variantStyles = theme.typography.variants[textVariant];
 
-    const fontSize = variantStyles.fontSize
-    const fontWeight = variantStyles.fontWeight
-    const lineHeight = variantStyles.lineHeight
+    const fontSize = variantStyles.fontSize;
+    const fontWeight = variantStyles.fontWeight;
+    const lineHeight = variantStyles.lineHeight;
 
-    console.log('fontSize:', fontSize.xs)
+    console.log("fontSize:", fontSize.xs);
 
     return `
       font-size: ${fontSize.xs}; 
@@ -48,50 +48,53 @@ const StyledButton = styled(Text)<{ textVariant?: ThemeTypographyVariants; }>`
   }}
 `;
 
-export interface ButtonBaseProps{
+export interface ButtonBaseProps {
   href?: string;
   textVariant?: ThemeTypographyVariants;
   children: React.ReactNode;
   styleSheet?: StyleSheet;
+  type?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export default function ButtonBase({ 
+export default function ButtonBase({
   textVariant = "subheadingSmall",
   children,
   styleSheet,
   href,
+  type,
   ...props
 }: ButtonBaseProps) {
   const router = useRouter();
   const ref = React.useRef();
   const isLink = Boolean(href);
-  const Tag = isLink ? 'a' : 'button';
+  const Tag = isLink ? "a" : "button";
   useRipple(ref, {
     animationLength: 600,
-    rippleColor: 'rgba(255,255,255,0.7)'
+    rippleColor: "rgba(255,255,255,0.7)",
   });
 
-
   return (
-    <StyledButton 
-      ref={ref} 
+    <StyledButton
+      ref={ref}
       tag={Tag}
-      href={href} 
-      textVariant={textVariant} 
+      href={href}
+      textVariant={textVariant}
       styleSheet={{
         ...styleSheet,
-        cursor: 'pointer',
-        outline: '0',
-        textDecoration: 'none',
+        cursor: "pointer",
+        outline: "0",
+        textDecoration: "none",
       }}
-      onClick={(event)=>{
+      onClick={(event) => {
         isLink && event.preventDefault();
         isLink && router.push(href);
-        !isLink && props.onClick &&  props.onClick(event);
+        !isLink && props.onClick && props.onClick(event);
       }}
-      {...props}>
-        {children}
+      type={type || (!isLink ? "button" : "text")}
+      {...props}
+    >
+      {children}
     </StyledButton>
-  )
+  );
 }

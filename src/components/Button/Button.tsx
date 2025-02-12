@@ -3,31 +3,29 @@ import ButtonBase, { ButtonBaseProps } from "./ButtonBase";
 import { colorVariantBy, ColorVariant, Variant } from "./colorVariantBy";
 import { ButtonSize, buttonSize } from "./buttonSize";
 
-
-interface ButtonProps extends ButtonBaseProps{
+interface ButtonProps extends ButtonBaseProps {
   children: React.ReactNode;
   fullwidth?: boolean;
   colorVariant?: ColorVariant;
   variant?: Variant;
-  size?: ButtonSize
+  size?: ButtonSize;
 }
 
 export default function Button({
-  children, 
-  styleSheet, 
+  children,
+  styleSheet,
   fullwidth = false,
-  colorVariant = 'linear02',
-  variant = 'contained',
-  size = 'md',
+  colorVariant = "linear02",
+  variant = "contained",
+  size = "md",
   onClick,
   ...props
-}: ButtonProps){
+}: ButtonProps) {
+  const theme = useTheme();
 
-  const theme  = useTheme();
-  
-  return(
+  return (
     <ButtonBase
-      onClick = {onClick}
+      onClick={onClick}
       {...props}
       styleSheet={{
         alignSelf: "flex-start",
@@ -37,12 +35,12 @@ export default function Button({
         ...buttonSize[size],
         //[Fullwidth]
         ...(fullwidth && {
-          alignSelf: 'initial',
+          alignSelf: "initial",
         }),
-        ...styleSheet
+        ...styleSheet,
       }}
     >
-        {children}
+      {children}
     </ButtonBase>
   );
 }

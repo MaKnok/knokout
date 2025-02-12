@@ -1,6 +1,6 @@
 export default () => (
   <>
-    <rect y="0.181946" width="24" height="24" fill="url(#pattern0_124_940)" />
+    <rect y="0.181946" width="18" height="18" fill="url(#pattern0_124_940)" />
     <defs>
       <pattern
         id="pattern0_124_940"
@@ -8,10 +8,7 @@ export default () => (
         width="1"
         height="1"
       >
-        <use
-          xlinkHref="#image0_124_940"
-          transform="scale(0.015625)"
-        />
+        <use xlinkHref="#image0_124_940" transform="scale(0.015625)" />
       </pattern>
       <image
         id="image0_124_940"
@@ -21,7 +18,4 @@ export default () => (
       />
     </defs>
   </>
-)
-
-
-
+);

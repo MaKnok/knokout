@@ -2,12 +2,24 @@ import Box from "@src/components/Box/Box";
 import Button from "@src/components/Button/Button";
 import Text from "@src/components/Text/Text";
 import { useTheme } from "@src/theme/ThemeProvider";
+import { useState } from "react";
+import MenuMobile from "../MenuMobile/MenuMobile";
 
 export default function Hero(){
 
   const theme = useTheme();
 
+  const [menuIsVisible, setMenuIsVisible] = useState(false)
+  const [isContactForm, setIsContactForm] = useState(false)
+
   return(
+    <>
+    <MenuMobile 
+            menuIsVisible={menuIsVisible}
+            setMenuIsVisible={setMenuIsVisible}
+            isContactForm={isContactForm}
+            setIsContactForm={setIsContactForm}
+          />
     <Box styleSheet={{ 
       height: {xs: "308px", md: "326px", xl: "360px" },
       width: {xl:'1236px'},
@@ -26,9 +38,17 @@ export default function Hero(){
           }}>
         Acesso ao <br/> próximo nível
       </Text>
-     <Button>
+      <Button
+        onClick={
+          () => {
+              setMenuIsVisible(true);
+              setIsContactForm(true);
+          }
+        }
+      >
         Solicitar orçamento
-     </Button>
+    </Button>
     </Box>
+    </>
   )
 }
