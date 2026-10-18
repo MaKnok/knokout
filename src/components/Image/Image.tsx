@@ -1,5 +1,6 @@
 import { BaseComponent } from "@src/theme/BaseComponent";
 import { StyleSheet } from "@src/theme/StyleSheet";
+import { assetPath } from "@src/utils/assetPath";
 
 interface ImageProps {
   src: string;
@@ -16,7 +17,7 @@ export default function Image({
   return (
     <BaseComponent
       as="img"
-      src={src}
+      src={assetPath(src)}
       alt={alt}
       {...props}
     >

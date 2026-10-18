@@ -1,10 +1,12 @@
-const mobileImage = 'images/hero-picture-mobile.png';
-const tabletImage = 'images/hero-picture-tablet.png';
-const desktopImage = 'images/hero-picture.png'; 
+import { assetPath } from "@src/utils/assetPath";
 
-const mobileImageContact = 'images/contact-mobile.png';
-const tabletImageContact = 'images/contact-tablet.png';
-const desktopImageContact = 'images/contact-desktop.png'; 
+const mobileImage = assetPath('images/hero-picture-mobile.png');
+const tabletImage = assetPath('images/hero-picture-tablet.png');
+const desktopImage = assetPath('images/hero-picture.png'); 
+
+const mobileImageContact = assetPath('images/contact-mobile.png');
+const tabletImageContact = assetPath('images/contact-tablet.png');
+const desktopImageContact = assetPath('images/contact-desktop.png'); 
 
 export const bgImage = {
   variants: {
